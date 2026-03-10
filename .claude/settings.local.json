@@ -17,7 +17,10 @@
       "WebFetch(domain:publicapis.io)",
       "Bash(git add:*)",
       "Bash(npm install:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(gh repo:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx jest:*)"
     ]
   }
 }
