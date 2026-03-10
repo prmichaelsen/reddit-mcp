@@ -9,9 +9,9 @@ project:
 milestones:
   - id: M1
     title: Foundation + Listings MVP
-    status: not_started
+    status: completed
     tasks_total: 6
-    tasks_complete: 0
+    tasks_complete: 6
     estimated_weeks: 1
     file: agent/milestones/milestone-1-foundation-listings-mvp.md
   - id: M2
@@ -54,36 +54,36 @@ tasks:
   milestone_1:
     - id: T1
       title: Project Scaffolding
-      status: not_started
+      status: completed
       estimated_hours: 2
       file: agent/tasks/milestone-1-foundation-listings-mvp/task-1-project-scaffolding.md
     - id: T2
       title: Reddit OAuth 2.0
-      status: not_started
+      status: completed
       estimated_hours: 3
       dependencies: [T1]
       file: agent/tasks/milestone-1-foundation-listings-mvp/task-2-reddit-oauth.md
     - id: T3
       title: Reddit API Client Wrapper
-      status: not_started
+      status: completed
       estimated_hours: 3
       dependencies: [T2]
       file: agent/tasks/milestone-1-foundation-listings-mvp/task-3-reddit-api-client.md
     - id: T4
       title: Listing Tools
-      status: not_started
+      status: completed
       estimated_hours: 3
       dependencies: [T3]
       file: agent/tasks/milestone-1-foundation-listings-mvp/task-4-listing-tools.md
     - id: T5
       title: Search Tools
-      status: not_started
+      status: completed
       estimated_hours: 1.5
       dependencies: [T4]
       file: agent/tasks/milestone-1-foundation-listings-mvp/task-5-search-tools.md
     - id: T6
       title: Testing & Verification
-      status: not_started
+      status: completed
       estimated_hours: 3
       dependencies: [T1, T2, T3, T4, T5]
       file: agent/tasks/milestone-1-foundation-listings-mvp/task-6-testing-verification.md
@@ -191,8 +191,8 @@ documentation:
 
 progress:
   planning: 100
-  implementation: 0
-  overall: 5
+  implementation: 17
+  overall: 20
 
 recent_work:
   - date: 2026-03-10
@@ -201,12 +201,18 @@ recent_work:
       - Created 6 milestone documents
       - Created 21 task documents organized by milestone
       - Updated progress.yaml with full project plan
+      - "Completed M1: Foundation + Listings MVP (all 6 tasks)"
+      - Implemented project scaffolding (package.json, tsconfig, esbuild, jest)
+      - Implemented Reddit OAuth 2.0 with token refresh and file storage
+      - Implemented Reddit API client with error handling, retry, rate limits
+      - Implemented 9 listing tools + 2 search tools (11 total)
+      - Created 5 test suites (36 tests passing)
+      - Implemented stdio and HTTP transports
 
 next_steps:
-  - Start M1 Task 1: Project Scaffolding
-  - Implement OAuth 2.0 and Reddit API client
-  - Build MVP listing and search tools
-  - Run @acp-proceed to begin implementation
+  - Start M2 Task 7: Post Tools
+  - Continue with M2 Content Interaction (submit, comment, vote, save)
+  - Then M3 Users & Messaging
 
 notes:
   - Following youtube-mcp reference pattern (same architecture)
