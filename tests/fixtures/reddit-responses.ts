@@ -195,6 +195,61 @@ export const mockMoreChildrenResponse = {
   },
 };
 
+export const mockMeResponse = {
+  name: "testuser",
+  id: "user123",
+  created_utc: 1600000000,
+  link_karma: 1000,
+  comment_karma: 5000,
+  is_gold: false,
+  is_mod: true,
+  has_verified_email: true,
+  subreddit: { display_name: "u_testuser", subscribers: 10 },
+};
+
+export const mockKarmaResponse = {
+  kind: "KarmaList",
+  data: [
+    { sr: "programming", comment_karma: 500, link_karma: 200 },
+    { sr: "typescript", comment_karma: 300, link_karma: 100 },
+  ],
+};
+
+export const mockPrefsResponse = {
+  over_18: false,
+  hide_downs: false,
+  default_comment_sort: "confidence",
+  lang: "en",
+  num_comments: 200,
+};
+
+export const mockTrophiesResponse = {
+  kind: "TrophyList",
+  data: {
+    trophies: [
+      { kind: "t6", data: { name: "Verified Email", icon_70: "icon.png" } },
+    ],
+  },
+};
+
+export const mockFriendsResponse = {
+  kind: "UserList",
+  data: {
+    children: [
+      { name: "friend1", date: 1700000000, id: "t2_friend1" },
+    ],
+  },
+};
+
+export const mockBlockedResponse = {
+  kind: "UserList",
+  data: {
+    children: [
+      { name: "blocked1", date: 1700000000, id: "t2_blocked1" },
+    ],
+  },
+};
+
 export const mockEmptyResponse = {};
 
 export const mockErrorResponse = {
