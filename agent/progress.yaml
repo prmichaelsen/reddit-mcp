@@ -25,7 +25,7 @@ milestones:
     title: Users & Messaging
     status: in_progress
     tasks_total: 3
-    tasks_complete: 1
+    tasks_complete: 2
     estimated_weeks: 1
     file: agent/milestones/milestone-3-users-and-messaging.md
   - id: M4
@@ -115,7 +115,7 @@ tasks:
       file: agent/tasks/milestone-3-users-and-messaging/task-10-account-tools.md
     - id: T11
       title: User Profile Tools
-      status: not_started
+      status: completed
       estimated_hours: 2.5
       dependencies: [T6]
       file: agent/tasks/milestone-3-users-and-messaging/task-11-user-profile-tools.md
