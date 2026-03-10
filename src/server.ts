@@ -9,6 +9,7 @@ import { registerVotingTools } from "./tools/voting.js";
 import { registerAccountTools } from "./tools/account.js";
 import { registerUserTools } from "./tools/users.js";
 import { registerMessageTools } from "./tools/messages.js";
+import { registerSubredditTools } from "./tools/subreddits.js";
 
 export function createServer(auth?: RedditAuth): McpServer {
   const server = new McpServer({
@@ -45,4 +46,5 @@ function registerAllTools(server: McpServer, client: RedditClient): void {
   registerAccountTools(server, client);
   registerUserTools(server, client);
   registerMessageTools(server, client);
+  registerSubredditTools(server, client);
 }

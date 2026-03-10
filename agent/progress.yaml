@@ -30,9 +30,9 @@ milestones:
     file: agent/milestones/milestone-3-users-and-messaging.md
   - id: M4
     title: Subreddits & Flair
-    status: not_started
+    status: in_progress
     tasks_total: 3
-    tasks_complete: 0
+    tasks_complete: 1
     estimated_weeks: 1
     file: agent/milestones/milestone-4-subreddits-and-flair.md
   - id: M5
@@ -128,7 +128,7 @@ tasks:
   milestone_4:
     - id: T13
       title: Subreddit Tools
-      status: not_started
+      status: completed
       estimated_hours: 2.5
       dependencies: [T6]
       file: agent/tasks/milestone-4-subreddits-and-flair/task-13-subreddit-tools.md
