@@ -23,9 +23,9 @@ milestones:
     file: agent/milestones/milestone-2-content-interaction.md
   - id: M3
     title: Users & Messaging
-    status: in_progress
+    status: completed
     tasks_total: 3
-    tasks_complete: 2
+    tasks_complete: 3
     estimated_weeks: 1
     file: agent/milestones/milestone-3-users-and-messaging.md
   - id: M4
@@ -121,7 +121,7 @@ tasks:
       file: agent/tasks/milestone-3-users-and-messaging/task-11-user-profile-tools.md
     - id: T12
       title: Private Message Tools
-      status: not_started
+      status: completed
       estimated_hours: 2
       dependencies: [T6]
       file: agent/tasks/milestone-3-users-and-messaging/task-12-private-message-tools.md
@@ -191,8 +191,8 @@ documentation:
 
 progress:
   planning: 100
-  implementation: 33
-  overall: 35
+  implementation: 48
+  overall: 50
 
 recent_work:
   - date: 2026-03-10
@@ -210,8 +210,8 @@ recent_work:
       - Implemented stdio and HTTP transports
 
 next_steps:
-  - Start M3 Task 10: Account Tools
-  - Continue with M3 Users & Messaging
+  - Start M4 Task 13: Subreddit Tools
+  - Continue with M4 Subreddits & Flair
 
 notes:
   - Following youtube-mcp reference pattern (same architecture)

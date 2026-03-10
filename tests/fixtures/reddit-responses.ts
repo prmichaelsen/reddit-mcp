@@ -250,6 +250,38 @@ export const mockBlockedResponse = {
   },
 };
 
+export const mockMessageListing = {
+  kind: "Listing",
+  data: {
+    after: null,
+    before: null,
+    children: [
+      {
+        kind: "t4",
+        data: {
+          id: "msg1",
+          name: "t4_msg1",
+          subject: "Hello",
+          body: "Hi there!",
+          author: "sender",
+          dest: "testuser",
+          created_utc: 1710000000,
+          new: true,
+        },
+      },
+    ],
+    dist: 1,
+    modhash: "",
+  },
+};
+
+export const mockComposeResponse = {
+  json: {
+    errors: [],
+    data: {},
+  },
+};
+
 export const mockEmptyResponse = {};
 
 export const mockErrorResponse = {
