@@ -155,6 +155,46 @@ export const mockEditResponse = {
   },
 };
 
+export const mockCommentResponse = {
+  json: {
+    errors: [],
+    data: {
+      things: [
+        {
+          kind: "t1",
+          data: {
+            id: "comment1",
+            name: "t1_comment1",
+            body: "This is my comment",
+            author: "testuser",
+            parent_id: "t3_abc123",
+          },
+        },
+      ],
+    },
+  },
+};
+
+export const mockMoreChildrenResponse = {
+  json: {
+    errors: [],
+    data: {
+      things: [
+        {
+          kind: "t1",
+          data: {
+            id: "more1",
+            name: "t1_more1",
+            body: "Expanded comment",
+            author: "otheruser",
+            parent_id: "t1_xyz789",
+          },
+        },
+      ],
+    },
+  },
+};
+
 export const mockEmptyResponse = {};
 
 export const mockErrorResponse = {
