@@ -3,6 +3,7 @@ import { RedditAuth } from "./auth/oauth.js";
 import { RedditClient } from "./client/reddit.js";
 import { registerListingTools } from "./tools/listings.js";
 import { registerSearchTools } from "./tools/search.js";
+import { registerPostTools } from "./tools/posts.js";
 
 export function createServer(auth?: RedditAuth): McpServer {
   const server = new McpServer({
@@ -33,4 +34,5 @@ export function createServerWithToken(accessToken: string): McpServer {
 function registerAllTools(server: McpServer, client: RedditClient): void {
   registerListingTools(server, client);
   registerSearchTools(server, client);
+  registerPostTools(server, client);
 }

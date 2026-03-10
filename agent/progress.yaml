@@ -16,9 +16,9 @@ milestones:
     file: agent/milestones/milestone-1-foundation-listings-mvp.md
   - id: M2
     title: Content Interaction
-    status: not_started
+    status: in_progress
     tasks_total: 3
-    tasks_complete: 0
+    tasks_complete: 1
     estimated_weeks: 1
     file: agent/milestones/milestone-2-content-interaction.md
   - id: M3
@@ -90,7 +90,7 @@ tasks:
   milestone_2:
     - id: T7
       title: Post Tools
-      status: not_started
+      status: completed
       estimated_hours: 3
       dependencies: [T6]
       file: agent/tasks/milestone-2-content-interaction/task-7-post-tools.md
@@ -191,8 +191,8 @@ documentation:
 
 progress:
   planning: 100
-  implementation: 17
-  overall: 20
+  implementation: 22
+  overall: 25
 
 recent_work:
   - date: 2026-03-10
@@ -210,8 +210,8 @@ recent_work:
       - Implemented stdio and HTTP transports
 
 next_steps:
-  - Start M2 Task 7: Post Tools
-  - Continue with M2 Content Interaction (submit, comment, vote, save)
+  - Start M2 Task 8: Comment Tools
+  - Continue with M2 Task 9: Vote, Save & Report Tools
   - Then M3 Users & Messaging
 
 notes:

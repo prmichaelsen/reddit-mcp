@@ -125,6 +125,38 @@ export const mockSubredditAbout = {
   },
 };
 
+export const mockSubmitResponse = {
+  json: {
+    errors: [],
+    data: {
+      url: "https://www.reddit.com/r/test/comments/newpost/my_new_post/",
+      drafts_count: 0,
+      id: "t3_newpost",
+      name: "t3_newpost",
+    },
+  },
+};
+
+export const mockEditResponse = {
+  json: {
+    errors: [],
+    data: {
+      things: [
+        {
+          kind: "t3",
+          data: {
+            id: "abc123",
+            name: "t3_abc123",
+            selftext: "Updated text",
+          },
+        },
+      ],
+    },
+  },
+};
+
+export const mockEmptyResponse = {};
+
 export const mockErrorResponse = {
   error: 403,
   message: "Forbidden",
