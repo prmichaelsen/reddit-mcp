@@ -46,7 +46,7 @@ milestones:
     title: Advanced Features & Polish
     status: in_progress
     tasks_total: 3
-    tasks_complete: 1
+    tasks_complete: 2
     estimated_weeks: 1
     file: agent/milestones/milestone-6-advanced-features-and-polish.md
 
@@ -172,7 +172,7 @@ tasks:
       file: agent/tasks/milestone-6-advanced-features-and-polish/task-19-multireddit-tools.md
     - id: T20
       title: Wiki Tools
-      status: not_started
+      status: completed
       estimated_hours: 2
       dependencies: [T6]
       file: agent/tasks/milestone-6-advanced-features-and-polish/task-20-wiki-tools.md
