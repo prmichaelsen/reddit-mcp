@@ -15,7 +15,9 @@
       "WebFetch(domain:getlate.dev)",
       "WebFetch(domain:painonsocial.com)",
       "WebFetch(domain:publicapis.io)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)"
     ]
   }
 }
