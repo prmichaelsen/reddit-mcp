@@ -37,9 +37,9 @@ milestones:
     file: agent/milestones/milestone-4-subreddits-and-flair.md
   - id: M5
     title: Moderation
-    status: in_progress
+    status: completed
     tasks_total: 3
-    tasks_complete: 2
+    tasks_complete: 3
     estimated_weeks: 1
     file: agent/milestones/milestone-5-moderation.md
   - id: M6
@@ -159,7 +159,7 @@ tasks:
       file: agent/tasks/milestone-5-moderation/task-17-mod-listing-tools.md
     - id: T18
       title: Mod Management Tools
-      status: not_started
+      status: completed
       estimated_hours: 1.5
       dependencies: [T16]
       file: agent/tasks/milestone-5-moderation/task-18-mod-management-tools.md
@@ -191,8 +191,8 @@ documentation:
 
 progress:
   planning: 100
-  implementation: 62
-  overall: 65
+  implementation: 76
+  overall: 80
 
 recent_work:
   - date: 2026-03-10
@@ -210,8 +210,8 @@ recent_work:
       - Implemented stdio and HTTP transports
 
 next_steps:
-  - Start M5 Task 16: Mod Action Tools
-  - Continue with M5 Moderation
+  - Start M6 Task 19: Multireddit Tools
+  - Continue with M6 Advanced Features & Polish
 
 notes:
   - Following youtube-mcp reference pattern (same architecture)
