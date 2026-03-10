@@ -41,7 +41,7 @@ export function registerAccountTools(
     "Update the authenticated user's preferences. Requires 'account' scope. Pass a JSON object with preference keys and values.",
     {
       prefs: z
-        .record(z.unknown())
+        .record(z.string(), z.unknown())
         .describe(
           "JSON object of preference key-value pairs to update (e.g. {\"over_18\": true, \"hide_downs\": false})",
         ),

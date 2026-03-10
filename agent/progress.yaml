@@ -44,9 +44,9 @@ milestones:
     file: agent/milestones/milestone-5-moderation.md
   - id: M6
     title: Advanced Features & Polish
-    status: in_progress
+    status: completed
     tasks_total: 3
-    tasks_complete: 2
+    tasks_complete: 3
     estimated_weeks: 1
     file: agent/milestones/milestone-6-advanced-features-and-polish.md
 
@@ -178,7 +178,7 @@ tasks:
       file: agent/tasks/milestone-6-advanced-features-and-polish/task-20-wiki-tools.md
     - id: T21
       title: Documentation & Polish
-      status: not_started
+      status: completed
       estimated_hours: 3
       dependencies: [T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20]
       file: agent/tasks/milestone-6-advanced-features-and-polish/task-21-documentation-polish.md
@@ -191,8 +191,8 @@ documentation:
 
 progress:
   planning: 100
-  implementation: 76
-  overall: 80
+  implementation: 100
+  overall: 100
 
 recent_work:
   - date: 2026-03-10
@@ -210,8 +210,8 @@ recent_work:
       - Implemented stdio and HTTP transports
 
 next_steps:
-  - Start M6 Task 19: Multireddit Tools
-  - Continue with M6 Advanced Features & Polish
+  - All milestones complete
+  - npm publish when ready
 
 notes:
   - Following youtube-mcp reference pattern (same architecture)

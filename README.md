@@ -1,12 +1,12 @@
 # reddit-mcp
 
-MCP server wrapping the Reddit API for AI agents. Provides 11 tools (MVP) with 88 planned, covering listings, search, posts, comments, voting, messaging, moderation, and more.
+MCP server wrapping the Reddit API for AI agents. Provides **88 tools** covering listings, search, posts, comments, voting, messaging, moderation, multireddits, wiki, and more.
 
 > Built with [Agent Context Protocol](https://github.com/prmichaelsen/agent-context-protocol)
 
 ## Features
 
-- **11 MCP tools** implemented (88 planned across 6 milestones)
+- **88 MCP tools** — full Reddit API coverage across 13 categories
 - **Reddit OAuth 2.0** authentication with automatic token refresh
 - **Dual transport**: stdio (default) and Streamable HTTP
 - **Rate-limit aware**: respects Reddit's X-Ratelimit headers (100 QPM)
@@ -76,7 +76,7 @@ node dist/index.js --transport http --port 3000
 
 ## Tools Reference
 
-### Listings (9 tools) — Implemented
+### Listings (9 tools)
 
 | Tool | Description | Scope |
 |------|-------------|-------|
@@ -90,105 +90,144 @@ node dist/index.js --transport http --port 3000
 | `reddit_duplicates` | Get cross-posts / duplicates | read |
 | `reddit_info` | Get info about things by fullname | read |
 
-### Search (2 tools) — Implemented
+### Search (2 tools)
 
 | Tool | Description | Scope |
 |------|-------------|-------|
 | `reddit_search` | Search across all of Reddit | read |
 | `reddit_search_subreddit` | Search within a specific subreddit | read |
 
-### Posts (9 tools) — Planned (M2)
+### Posts (9 tools)
 
 | Tool | Description | Scope |
 |------|-------------|-------|
 | `reddit_submit` | Create a new post (link or self) | submit |
 | `reddit_edit` | Edit a self-post or comment | edit |
 | `reddit_delete` | Delete a post or comment | edit |
-| `reddit_hide` / `reddit_unhide` | Hide/unhide a post | report |
-| `reddit_mark_nsfw` / `reddit_unmark_nsfw` | Toggle NSFW | modposts |
-| `reddit_spoiler` / `reddit_unspoiler` | Toggle spoiler | modposts |
+| `reddit_hide` | Hide a post from listings | report |
+| `reddit_unhide` | Unhide a post | report |
+| `reddit_mark_nsfw` | Mark a post as NSFW | modposts |
+| `reddit_unmark_nsfw` | Remove NSFW mark | modposts |
+| `reddit_spoiler` | Mark a post as spoiler | modposts |
+| `reddit_unspoiler` | Remove spoiler mark | modposts |
 
-### Comments (2 tools) — Planned (M2)
+### Comments (2 tools)
 
 | Tool | Description | Scope |
 |------|-------------|-------|
 | `reddit_comment` | Post a comment or reply | submit |
-| `reddit_more_children` | Load more comments | read |
+| `reddit_more_children` | Load more comments from collapsed threads | read |
 
-### Voting, Save & Report (4 tools) — Planned (M2)
+### Voting, Save & Report (4 tools)
 
 | Tool | Description | Scope |
 |------|-------------|-------|
 | `reddit_vote` | Upvote/downvote/unvote | vote |
-| `reddit_save` / `reddit_unsave` | Save/unsave content | save |
+| `reddit_save` | Save content | save |
+| `reddit_unsave` | Unsave content | save |
 | `reddit_report` | Report content | report |
 
-### Account (7 tools) — Planned (M3)
+### Account (7 tools)
 
 | Tool | Description | Scope |
 |------|-------------|-------|
 | `reddit_me` | Get authenticated user info | identity |
-| `reddit_me_karma` | Get karma breakdown | mysubreddits |
-| `reddit_me_prefs` / `reddit_me_prefs_update` | Get/update preferences | identity/account |
-| `reddit_me_trophies` | Get trophies | identity |
-| `reddit_me_friends` / `reddit_me_blocked` | Get friends/blocked | mysubreddits |
+| `reddit_me_karma` | Get karma breakdown by subreddit | mysubreddits |
+| `reddit_me_prefs` | Get user preferences | identity |
+| `reddit_me_prefs_update` | Update user preferences | account |
+| `reddit_me_trophies` | Get user trophies | identity |
+| `reddit_me_friends` | Get friends list | mysubreddits |
+| `reddit_me_blocked` | Get blocked users list | mysubreddits |
 
-### Users (9 tools) — Planned (M3)
+### Users (9 tools)
 
 | Tool | Description | Scope |
 |------|-------------|-------|
 | `reddit_user_about` | Get user profile | read |
-| `reddit_user_overview` / `submitted` / `comments` | User history | history |
-| `reddit_user_saved` / `upvoted` / `downvoted` | User saved/voted | history |
-| `reddit_user_trophies` | User trophies | read |
+| `reddit_user_overview` | Get user's recent posts and comments | history |
+| `reddit_user_submitted` | Get user's submitted posts | history |
+| `reddit_user_comments` | Get user's comments | history |
+| `reddit_user_saved` | Get user's saved items | history |
+| `reddit_user_upvoted` | Get user's upvoted posts | history |
+| `reddit_user_downvoted` | Get user's downvoted posts | history |
+| `reddit_user_trophies` | Get user's trophies | read |
 | `reddit_block_user` | Block a user | account |
 
-### Messages (7 tools) — Planned (M3)
+### Messages (7 tools)
 
 | Tool | Description | Scope |
 |------|-------------|-------|
-| `reddit_inbox` / `reddit_unread` / `reddit_sent` | Read messages | privatemessages |
-| `reddit_compose` | Send private message | privatemessages |
-| `reddit_read_message` / `reddit_unread_message` | Toggle read status | privatemessages |
+| `reddit_inbox` | Get inbox messages | privatemessages |
+| `reddit_unread` | Get unread messages | privatemessages |
+| `reddit_sent` | Get sent messages | privatemessages |
+| `reddit_compose` | Send a private message | privatemessages |
+| `reddit_read_message` | Mark message as read | privatemessages |
+| `reddit_unread_message` | Mark message as unread | privatemessages |
 | `reddit_del_msg` | Delete a message | privatemessages |
 
-### Subreddits (8 tools) — Planned (M4)
+### Subreddits (8 tools)
 
 | Tool | Description | Scope |
 |------|-------------|-------|
-| `reddit_subreddit_about` / `reddit_subreddit_rules` | Subreddit info | read |
-| `reddit_subscribe` / `reddit_unsubscribe` | Manage subscriptions | subscribe |
-| `reddit_subreddits_mine` / `popular` / `new` / `search` | Discover subreddits | mysubreddits/read |
+| `reddit_subreddit_about` | Get subreddit metadata | read |
+| `reddit_subreddit_rules` | Get subreddit rules | read |
+| `reddit_subscribe` | Subscribe to a subreddit | subscribe |
+| `reddit_unsubscribe` | Unsubscribe from a subreddit | subscribe |
+| `reddit_subreddits_mine` | List subscribed subreddits | mysubreddits |
+| `reddit_subreddits_popular` | List popular subreddits | read |
+| `reddit_subreddits_new` | List newest subreddits | read |
+| `reddit_subreddits_search` | Search for subreddits | read |
 
-### Flair (3 tools) — Planned (M4)
+### Flair (3 tools)
 
 | Tool | Description | Scope |
 |------|-------------|-------|
-| `reddit_link_flair` / `reddit_user_flair` | Get flair options | flair |
-| `reddit_select_flair` | Set flair | flair |
+| `reddit_link_flair` | Get available post flair templates | flair |
+| `reddit_user_flair` | Get available user flair templates | flair |
+| `reddit_select_flair` | Set flair on a post or user | flair |
 
-### Moderation (16 tools) — Planned (M5)
+### Moderation (16 tools)
 
-Approve, remove, distinguish, lock/unlock, mod queue, reports, spam, modlog, and user management tools.
+| Tool | Description | Scope |
+|------|-------------|-------|
+| `reddit_approve` | Approve a post or comment | modposts |
+| `reddit_remove` | Remove a post or comment | modposts |
+| `reddit_distinguish` | Distinguish as moderator | modposts |
+| `reddit_ignore_reports` | Ignore future reports | modposts |
+| `reddit_unignore_reports` | Stop ignoring reports | modposts |
+| `reddit_lock` | Lock a thread | modposts |
+| `reddit_unlock` | Unlock a thread | modposts |
+| `reddit_modqueue` | Get mod queue items | modposts |
+| `reddit_reports` | Get reported items | modposts |
+| `reddit_spam` | Get spam items | modposts |
+| `reddit_edited` | Get recently edited items | modposts |
+| `reddit_modlog` | Get moderation log | modlog |
+| `reddit_moderators` | List moderators | read |
+| `reddit_contributors` | List approved contributors | modcontributors |
+| `reddit_banned` | List banned users | modcontributors |
+| `reddit_muted` | List muted users | modcontributors |
 
-### Multireddits (7 tools) — Planned (M6)
+### Multireddits (7 tools)
 
-CRUD operations for custom feeds and managing subreddits within them.
+| Tool | Description | Scope |
+|------|-------------|-------|
+| `reddit_multi_mine` | List your multireddits | read |
+| `reddit_multi_get` | Get a multireddit | read |
+| `reddit_multi_create` | Create a multireddit | subscribe |
+| `reddit_multi_update` | Update a multireddit | subscribe |
+| `reddit_multi_delete` | Delete a multireddit | subscribe |
+| `reddit_multi_add_sub` | Add subreddit to multireddit | subscribe |
+| `reddit_multi_remove_sub` | Remove subreddit from multireddit | subscribe |
 
-### Wiki (5 tools) — Planned (M6)
+### Wiki (5 tools)
 
-Read, edit, list pages, and browse revision history.
-
-## Roadmap
-
-| Milestone | Status | Tools |
-|-----------|--------|-------|
-| M1: Foundation + Listings MVP | **Complete** | 11 |
-| M2: Content Interaction | Planned | 15 |
-| M3: Users & Messaging | Planned | 23 |
-| M4: Subreddits & Flair | Planned | 11 |
-| M5: Moderation | Planned | 16 |
-| M6: Advanced Features & Polish | Planned | 12 |
+| Tool | Description | Scope |
+|------|-------------|-------|
+| `reddit_wiki_page` | Read a wiki page | wikiread |
+| `reddit_wiki_edit` | Edit a wiki page | wikiedit |
+| `reddit_wiki_pages` | List all wiki pages | wikiread |
+| `reddit_wiki_revisions` | Get wiki revision history | wikiread |
+| `reddit_wiki_page_revisions` | Get revisions for a specific page | wikiread |
 
 ## Reddit API Rate Limits
 
@@ -208,11 +247,22 @@ reddit-mcp/
 │   ├── client/reddit.ts      # Reddit API HTTP client
 │   ├── tools/
 │   │   ├── listings.ts       # 9 listing tools
-│   │   └── search.ts         # 2 search tools
+│   │   ├── search.ts         # 2 search tools
+│   │   ├── posts.ts          # 9 post tools
+│   │   ├── comments.ts       # 2 comment tools
+│   │   ├── voting.ts         # 4 vote/save/report tools
+│   │   ├── account.ts        # 7 account tools
+│   │   ├── users.ts          # 9 user profile tools
+│   │   ├── messages.ts       # 7 message tools
+│   │   ├── subreddits.ts     # 8 subreddit tools
+│   │   ├── flair.ts          # 3 flair tools
+│   │   ├── moderation.ts     # 16 moderation tools
+│   │   ├── multireddits.ts   # 7 multireddit tools
+│   │   └── wiki.ts           # 5 wiki tools
 │   ├── transport/http.ts     # Streamable HTTP transport
 │   └── types/index.ts        # Shared types
 ├── tests/
-│   ├── unit/                 # 5 test suites (36 tests)
+│   ├── unit/                 # 17 test suites (135 tests)
 │   ├── fixtures/             # Mock Reddit API responses
 │   └── helpers/              # Mock client
 ├── package.json
