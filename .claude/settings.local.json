@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git ls-tree:*)",
+      "Bash(find /home/prmichaelsen/.acp/projects/youtube-mcp -maxdepth 2 -type f -name \"package.json\" -o -name \"tsconfig.json\" -o -name \"*.ts\" 2>/dev/null | head -20)",
+      "Bash(find /home/prmichaelsen/.acp/projects/youtube-mcp-server/agent -type f | grep -E \"\\\\.\\(md|json\\)$\" | sort)",
+      "Bash(find /home/prmichaelsen/.acp/projects/youtube-mcp/agent -type f | grep -E \"\\\\.\\(md|json\\)$\" | sort)",
+      "WebSearch",
+      "WebFetch(domain:old.reddit.com)",
+      "WebFetch(domain:www.reddit.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:www.postman.com)",
+      "WebFetch(domain:latenode.com)",
+      "Bash(gh api:*)",
+      "WebFetch(domain:getlate.dev)",
+      "WebFetch(domain:painonsocial.com)",
+      "WebFetch(domain:publicapis.io)",
+      "Bash(git add:*)"
+    ]
+  }
+}
