@@ -12,6 +12,7 @@ import { registerMessageTools } from "./tools/messages.js";
 import { registerSubredditTools } from "./tools/subreddits.js";
 import { registerFlairTools } from "./tools/flair.js";
 import { registerModerationTools } from "./tools/moderation.js";
+import { registerMultiredditTools } from "./tools/multireddits.js";
 
 export function createServer(auth?: RedditAuth): McpServer {
   const server = new McpServer({
@@ -51,4 +52,5 @@ function registerAllTools(server: McpServer, client: RedditClient): void {
   registerSubredditTools(server, client);
   registerFlairTools(server, client);
   registerModerationTools(server, client);
+  registerMultiredditTools(server, client);
 }
