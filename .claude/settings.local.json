@@ -20,7 +20,18 @@
       "Bash(npm run:*)",
       "Bash(gh repo:*)",
       "Bash(npx tsc:*)",
-      "Bash(npx jest:*)"
+      "Bash(npx jest:*)",
+      "WebFetch(domain:developers.reddit.com)",
+      "Bash(curl -s \"https://raw.githubusercontent.com/reddit/devvit/main/README.md\" | head -100)",
+      "WebFetch(domain:support.reddithelp.com)",
+      "Bash(curl -s \"https://raw.githubusercontent.com/reddit/devvit/main/devvit-docs/docs/intro.md\" 2>/dev/null || echo \"Not found\")",
+      "Bash(curl -s \"https://api.github.com/repos/reddit/devvit\" | jq -r '.description')",
+      "Bash(curl -s \"https://raw.githubusercontent.com/reddit/devvit/main/packages/apps/README.md\")",
+      "WebFetch(domain:praw.readthedocs.io)",
+      "Bash(curl -s *)",
+      "WebFetch(domain:redditinc.com)",
+      "WebFetch(domain:techcrunch.com)",
+      "WebFetch(domain:arstechnica.com)"
     ]
   }
 }
